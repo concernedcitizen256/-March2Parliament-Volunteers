@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Cookie Banner -->
+    <script id="cookieyes" type="text/javascript"
+        src="https://cdn-cookieyes.com/client_data/5ae40288320e48428eecee4b/script.js"></script>
+    <!-- End cookieyes banner -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal, Medical and Other Professional Aid for Protesters</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Legal, Medical and Other Form of Aid for Protesters</title>
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Help those at the protests, those abducted and those in any need of help after the #March2Parliament Protests. Get support resources. Help our people." />
+    <meta name="keywords" content="missing persons Uganda, kidnapped Ugandans, abducted Ugandans, legal aid, medical Aid" />
+    <meta name="author" content="Forked from Wes Kambale" />
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Legal, Medical and Other Form of Aid for Protesters" />
+    <meta property="og:description" content="Help those at the protests, those abducted and those in any need of help after the #March2Parliament Protests. Get support resources. Help our people." />
+    <meta property="og:image" content="./img/image_of_person.jpg" />
+    <meta property="og:url" content="#" />
+    <meta name="twitter:title" content="Missing Persons Uganda" />
+    <meta name="twitter:description" content="Help those at the protests, those absucted and those in any need of help after the #March2Parliament Protests. Get support resources. Help our people." />
+    <meta name="twitter:image" content="./img/image_of_person.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Social Media Meta Tags End-->
+
+    <!--
+        site.manifest provides metadata used when your web app is installed on a
+        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="./site.webmanifest" />
+    <!-- Manifest Ends -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link href="./apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Schema Markup data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Legal, Medical and Other Form of Aid for Protesters",
+    "url": "https://missingpersonsug.com",
+    "logo": "https://missingpersonsug.com/logo.webp",
+    "sameAs": [
+        "",
+        "",
+        "",
+        "",
+        ""
+        ]
+    }
+    </script>
+    <!-- Schema Markup data ends -->
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1>Legal, Medical and Other Professional Aid for Protesters</h1>
-    </header>
+    <div class="header">
+      <h1>Legal, Medical and Other Professional Aid for Protesters</h1>
+    </div>
 
-    <!-- Main Content -->
-    <main class="content">
-      
-        <!-- Search and Sort Section -->
-        <div class="filter-section">
-            <!-- Category Buttons -->
-            <div class="buttons">
+    <div class="content">
+        <button id="volunteerButton" class="volunteer-button">Volunteer</button>
+        <div class="search-sort">
+            <span class="content__sort-by">Filter by:</span>
+            <div class="content__buttons buttons">
                 <button data-category="All" class="active">All</button>
                 <button data-category="Medical">Medical</button>
                 <button data-category="Legal">Legal</button>
                 <button data-category="Other">Other</button>
             </div>
-
-            <!-- Search Box -->
-            <input type="text" id="searchInput" placeholder="Search by name or profession...">
+            <input type="text" id="searchInput" placeholder="Search Person's Name...">
         </div>
+        <div id="persons" class="persons"></div>
+    </div>
 
-        <!-- Volunteers List -->
-        <div id="persons" class="persons-list"></div>
-        
-        <!-- Loading Indicator -->
-        <div id="loading" class="loading">Loading...</div>
-    </main>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-buttons">
-            <button id="volunteerButton">Volunteer</button>
-            <button id="donateButton">Donate</button>
-        </div>
+        <ul>
+            <li><a href="./privacy.html">Privacy Policy</a></li>
+            <li><a href="./cookies.html">Cookie Policy</a></li>
+        </ul>
+        <p class="rights">2024 © Made Possible by <a href="https://kambale.dev" target="_blank">Wes Kambale</a>. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
