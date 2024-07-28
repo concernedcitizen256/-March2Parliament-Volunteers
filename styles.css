@@ -262,7 +262,7 @@ button:hover {
 }
 
 .card.expanded .card-content {
-    max-height: 500px; /* Adjustable */
+    max-height: 500px; /* Adjuatable */
 }
 
 .transition-expand {
@@ -364,26 +364,88 @@ button:hover {
 
 @media screen and (max-width: 1200px) {
     .persons {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     }
 }
 
-@media screen and (max-width: 600px) {
-    .content__buttons {
-        flex-direction: column;
-        align-items: center;
+@media screen and (max-width: 1080px) {
+    .search-sort {
+        display: flex;
+        flex-flow: column;
     }
+}
 
-    .filter-and-search {
-        flex-direction: column;
-        align-items: stretch;
+@media screen and (max-width: 768px) {
+    .persons {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
     .header h1 {
         font-size: 2rem;
     }
+}
 
-    .header h2 {
-        font-size: 1.1rem;
+@media screen and (max-width: 480px) {
+    .persons {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .card-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card__name {
+        font-size: 1rem;
+    }
+
+    .card-status, .card__office, .locations, .card__gender, .card__twitter, .card__currently, .share-button {
+        font-size: 0.8rem;
+    }
+
+    .search-sort input,
+    .content__buttons button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* spinner */
+.loading {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--lightgrey);
+    border-top: 5px solid var(--white);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+canvas {
+    max-height: 400px;
+}
+
+/* Alpine.js transitions */
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.card.expanded .card-content {
+    max-height: 500px;
 }
