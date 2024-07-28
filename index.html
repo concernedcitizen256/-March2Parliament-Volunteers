@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Cookie Banner -->
+    <!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript"
+        src="https://cdn-cookieyes.com/client_data/5ae40288320e48428eecee4b/script.js"></script>
+    <!-- End cookieyes banner -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal, Medical and Other Professional Aid for Protesters</title>
+    <!-- Meta tags SEO -->
+    <meta name="description"
+        content="Find legal, medical, and other professional aid for protesters in Uganda. View volunteer information and get support." />
+    <meta name="keywords" content="protesters aid Uganda, legal aid Uganda, medical aid Uganda" />
+    <meta name="author" content="Wes Kambale" />
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Aid for Protesters in Uganda" />
+    <meta property="og:description"
+        content="Find legal, medical, and other professional aid for protesters in Uganda. View volunteer information and get support." />
+    <meta property="og:image" content="./src/img/image_of_person.jpg" />
+    <meta property="og:url" content="https://aidforprotesters.org" />
+    <meta name="twitter:title" content="Aid for Protesters in Uganda" />
+    <meta name="twitter:description"
+        content="Find legal, medical, and other professional aid for protesters in Uganda. View volunteer information and get support." />
+    <meta name="twitter:image" content="./src/img/image_of_person.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Social Media Meta Tags End-->
+    <!--
+        site.manifest provides metadata used when your web app is installed on a
+        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="./src/assets/site.webmanifest" />
+    <!-- Manifest Ends -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+    <link href="./src/assets/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Schema Markup data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aid for Protesters Uganda",
+    "url": "https://aidforprotesters.org",
+    "logo": "https://aidforprotesters.org/logo.webp",
+    "sameAs": [
+        "",
+        "",
+        "",
+        "",
+        ""
+        ]
+    }
+    </script>
+    <!-- Schema Markup data ends -->
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Legal, Medical and Other Professional Aid for Protesters</h1>
+    </div>
+    <div class="content">
+        <span class="content__sort-by">Filter by:</span>
+        <div class="search-sort">
+            <div class="content__buttons buttons">
+                <button data-category="All" class="active">All</button>
+                <button data-category="Medical">Medical</button>
+                <button data-category="Legal">Legal</button>
+                <button data-category="Other">Other</button>
+            </div>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search volunteers...">
+        </div>
+        <div id="persons" class="persons"></div>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div w3-include-html="src/partials/footer.html"></div>
+    <script src="scripts.js"></script>
+    <script src="./src/js/include.js"></script>
+    <script src="./src/js/time.js"></script>
+</body>
+</html>
