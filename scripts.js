@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let originalPersonsData = [];
 
-    // Fetch the volunteers data
+    // Fetch the volunteers data function
     async function fetchData(url) {
         console.log("Fetching data from:", url);
         try {
