@@ -1,244 +1,167 @@
-/* Reset some default browser styles */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
+
+/* Root variables */
+:root {
+    --red: #cb2929;
+    --blue: #007bff;
+    --green: #28a745;
+    --lightergrey: #444;
+    --lightgrey: #333;
+    --white: #fff;
+    --black: #000000;
+    --yellow: #ffb224;
+    --purple: #8e4ec6;
+    --darkred: #800000;
+    --card-bg: #0a0a0a;
+    --card-hover-bg: #1a1a1a;
+}
+
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Rubik', Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-body {
-    font-family: 'Inter', Arial, sans-serif; /* Updated font */
-    line-height: 1.6;
-    background-color: #000000; /* Background color from original */
-    color: #ffffff; /* Text color from original */
-    padding: 20px;
+a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.header {
-    background-color: var(--lightgrey); /* Updated background color */
-    padding: 2rem; /* Added padding */
-    text-align: center; /* Center align text */
+a:hover {
+    color: var(--purple);
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #ffffff; /* Header color from original */
-    font-size: 1.5rem; /* Adjusted font size */
-}
-
-#searchInput {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none; /* Remove border */
-    border-radius: 24px; /* Adjust border radius */
-    font-size: 1rem; /* Update font size */
-    background-color: #333; /* Background color from original */
-    color: #ffffff; /* Text color */
-    display: block; /* Ensure it takes full width */
-    margin-left: auto; /* Center align horizontally */
-    margin-right: auto; /* Center align horizontally */
-}
-
-.search-sort {
-    text-align: center; /* Center align the search and sort elements */
-    margin-bottom: 20px; /* Space between sections */
-}
-
-.content__sort-by {
-    display: block; /* Ensure it takes full width */
-    text-align: center; /* Center align text */
-    margin-bottom: 10px; /* Space between text and other elements */
-}
-
-.search-sort input {
-    max-width: 600px; /* Limit width on large screens */
-    margin: 0 auto; /* Center align on large screens */
-}
-
-.buttons {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.buttons button {
-    background: #007bff; /* Button color from original */
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 24px; /* Adjust border radius */
+button {
     cursor: pointer;
-    margin: 5px;
+    color: var(--white);
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.buttons button.active, .buttons button:hover {
-    background: #0056b3; /* Hover color */
-    transform: translateY(-2px); /* Transform effect */
+button:hover {
+    transform: translateY(-2px);
 }
 
-.card {
-    background: #0a0a0a; /* Card background color from original */
-    border: none; /* Remove border */
-    border-radius: 15px; /* Adjust border radius */
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Update box shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
-}
-
-.card:hover {
-    background: #1a1a1a; /* Hover background color from original */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Update box shadow */
-    transform: translateY(-5px); /* Transform effect */
-}
-
-.card h2 {
-    font-size: 1.2rem; /* Adjust font size */
-    margin-bottom: 10px;
-    color: #ffffff; /* Text color */
-}
-
-.card p {
-    margin-bottom: 10px;
-    color: #dddddd; /* Adjust text color */
-}
-
-.card-twitter, .card-twitter span {
-    display: inline-flex;
-    align-items: center;
-    color: #007bff;
-    text-decoration: none;
-    margin-top: 10px;
-    transition: color 0.3s;
-}
-
-.card-twitter:hover, .card-twitter span:hover {
-    color: #0056b3; /* Hover color */
-}
-
-.card-twitter svg {
-    margin-right: 5px;
-}
-
-.share-button {
-    background: #007bff; /* Button color from original */
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px; /* Adjust border radius */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.share-button:hover {
-    background: #0056b3; /* Hover color */
-}
-
-#persons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.person {
-    flex: 1 0 21%; /* Adjust percentage */
-    max-width: 300px; /* Adjust max-width */
-    margin: 10px;
-}
-
-#loading {
+.header {
+    background-color: var(--lightgrey);
+    padding: 2rem;
     text-align: center;
-    margin: 20px 0;
-    display: none; /* Initially hidden */
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .person {
-        flex: 1 0 46%; /* Two items per row on small screens */
-    }
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
-@media (max-width: 480px) {
-    .person {
-        flex: 1 0 100%; /* One item per row on very small screens */
-    }
-
-    #searchInput {
-        width: auto; /* Adjust width for smaller screens */
-    }
+.header h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
 }
 
-/* Footer Styling */
-.footer {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text inside */
-    margin-top: 20px; /* Add margin to separate from other content */
-    padding: 20px; /* Add padding for spacing */
-    background-color: #000000; /* Background color */
-}
-
-.footer ul {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Use flexbox to align list items horizontally */
-    justify-content: center; /* Center align list items horizontally */
-}
-
-.footer ul li {
-    margin: 0 10px; /* Add horizontal spacing between list items */
-}
-
-.footer ul li a {
-    color: #ffffff; /* Link color */
-    text-decoration: none; /* Remove underline */
-}
-
-.footer ul li a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-.rights {
-    margin-top: 10px; /* Add space above the rights text */
-    color: #ffffff; /* Text color */
-}
-
-.rights a {
-    color: #007bff; /* Link color in footer */
-    text-decoration: none; /* Remove underline */
-}
-
-.rights a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Existing CSS */
-
-/* Add this to your existing CSS */
-.volunteer-button {
-    background: #007bff; /* Button color from original */
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 24px; /* Matching border radius */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-    display: block; /* Center the button */
-    width: fit-content; /* Fit the button to its content */
-    margin-left: auto; /* Center align */
-    margin-right: auto; /* Center align */
-}
-
-.volunteer-button:hover {
-    background: #0056b3; /* Hover color */
+.content {
+    flex-grow: 1;
+    max-width: 1400px;
+    width: 95%;
+    margin: 2rem auto;
+    padding: 1rem 0;
 }
 
 .search-sort {
-    text-align: center; /* Center the search div */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.content__sort-by {
+    display: block;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.content__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.content__buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 24px;
+    border: none;
+    background-color: var(--lightergrey);
+    color: var(--white);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.content__buttons button.active,
+.content__buttons button:hover {
+    background-color: var(--blue);
+    transform: translateY(-2px);
+}
+
+.search-input {
+    width: 300px;
+    padding: 0.75rem;
+    border-radius: 24px;
+    border: none;
+    font-size: 1rem;
+    background-color: var(--lightergrey);
+    color: var(--white);
+}
+
+.persons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Rest of your existing styles... */
+
+/* spinner */
+.loading {
+    display: none;
+    justify-content: center;
+    padding: 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--lightgrey);
+    border-top: 5px solid var(--white);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .search-input {
+        width: 100%;
+    }
+
+    .content__buttons {
+        flex-direction: column;
+    }
+
+    .content__buttons button {
+        width: 100%;
+    }
 }
