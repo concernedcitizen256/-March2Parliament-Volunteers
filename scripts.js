@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Configuration
     const CONFIG = {
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRLDJ1VqnYjRrmoFzbGr2AQne78zlj_7zN9VEqeMrMQ7m3jyBIOlEC8WDBvT1pDz4HvrZpxCVX3WaVI/pub?output=csv',
-        personsPerPage: 18,
+        personsPerPage: 100,
         scrollThreshold: 100,
         scrollDelay: 200
     };
